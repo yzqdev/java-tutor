@@ -1,0 +1,2 @@
+class=yzq.reflection.springdemo.Service1
+method=doService1
