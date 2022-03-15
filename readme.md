@@ -173,3 +173,37 @@ provided意味着打包的时候可以不用包进去，别的设施(Web Contain
 A–>B–>C。当前项目为A，A依赖于B，B依赖于C。知道B在A项目中的scope，那么怎么知道C在A中的scope呢？答案是：
 当C是test或者provided时，C直接被丢弃，A不依赖C；
 否则A依赖C，C的scope继承于B的scope。
+
+## 什么是classpath
+
+### 各种path获取到的路径的区别
+Main.class.getResource(""); 得到的是当前class所在的路径
+
+Main.class.getResourceAsStream(""); 是从当前路径查找资源资源
+
+Main.class.getClassLoader.getResource("");得到的是当前类classloader加载类的起始位置
+
+Main.class.getClassLoader.getResourceAsStream("");从classpath的起始位置查找资源
+
+但是
+
+Main.class.getResource("/"); 表示从classpath目录下找
+
+也就是说 Main.class.getResource("/"); 等价于 Main.class.getClassLoader.getResource("");
+
+但是 Main.class.getClassLoader.getResourceAsStream("/"); 返回的是null
+
+### 关于Servlet 资源路径
+ServletContext.getRealPath("/") 返回的是 war 包展开后的从系统根目录到war展开地址的根路径，比如windows 就是 file:///d/path/to/war/
+
+也就是上面做了两个动作， 先从 war 根目录找到资源， 然后返回资源完整路径
+
+同样的 ServletContext.getResource("/") 返回的的是从war 根目录查找到的资源，只不过返回的是 URL ServletContext.getResourceAsStream("/") 返回的是和上面一样的 InputStream
+
+但是 ServletContext.getResource("") 返回的是相对于URL的路径，相当于从当前URL根路径查找资源 ServletContext.getResourceAsStream("") 和上面一样，只不过返回InputStream
+
+### 关于maven工程下springmvc资源路径配置
+Java 源代码文件资源在Maven工程中的默认路径是: src/main/java，这个路径就是放置你的Java源代码文件。默认的路径是无需在Maven的pom.xml配置文件中指定的
+资源文件的缺省路径为src/main/resources，这样Maven在打包成war文件的时候，会将src/main/resources的资源文件复制到class目录。
+因此对于Spring mvc项目，servlet的配置文件springmvc-context.xml缺省会放置在 src/main/resources/springmvc-context.xml。
+对应的的web.xml指定的<param-value>classpath:springmvc-context.xml</param-value> 中，servlet的配置文件springmvc-context.xml 需要从 class目录下查找

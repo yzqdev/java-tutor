@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
  * @date time 2021/10/12 22:02
  * @modified By:
  */
-public class InstanceEnhance {
+class InstanceEnhance {
     /**
      * 新版本的instanceof的使用，无须显示强转
      */
