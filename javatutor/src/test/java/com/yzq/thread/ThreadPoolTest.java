@@ -15,13 +15,13 @@ import java.util.concurrent.TimeUnit;
  * @date time 2021/10/14 14:33
  * @modified By:
  */
-public class ThreadPoolTest {
+class ThreadPoolTest {
 
     // 线程数
     public static final int THREAD_POOL_SIZE = 16;
 
     @Test
-    void pool() throws InterruptedException {
+    void poolTest() throws InterruptedException {
         // 使用 ThreadFactoryBuilder 创建自定义线程名称的 ThreadFactory
         ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
                 .setNameFormat("hyn-demo-pool-%d").build();
@@ -47,3 +47,27 @@ public class ThreadPoolTest {
         System.out.println("Done");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
