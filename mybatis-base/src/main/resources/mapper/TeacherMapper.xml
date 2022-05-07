@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzq.mapper.TeacherMapper">
+    <insert id="saveTeacher" parameterType="com.yzq.model.Teacher">
+        insert into first.teacher (id, name)
+        values (#{id}, #{name})</insert>
+    <update id="updateTeacher" parameterType="com.yzq.model.Teacher">
+        update first.teacher
+        <set> <if test="name != null">name=#{name},</if>
+            <if test="title != null">title=#{title},</if>
+
+
+        </set>
+        where id=#{id}
+    </update>
+    <select id="getTeachers" resultType="com.yzq.model.Teacher">
+        select *from first.teacher
+        <where>
+            <if test="title != null">
+                AND title = #{title}
+            </if>
+
+        </where>
+    </select>
+    <select id="getTeacherById" resultType="com.yzq.model.Teacher">select *from first.teacher where id=#{id}</select>
+
+
+</mapper>
