@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzq.mapper.StudentMapper">
+
+
+    <!--    =======================-->
+    <insert id="saveStudent" parameterType="com.yzq.model.Student">
+        insert into first.student (id, name, tid)
+        values (#{id}, #{name}, #{tid})
+    </insert>
+    <select id="getUsers" resultType="com.yzq.model.Student">
+        select *
+        from first.user
+    </select>
+    <select id="getStudents" resultMap="StudentTeacher">
+        select *
+        from first.student
+    </select>
+    <resultMap id="StudentTeacher" type="com.yzq.model.Student">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <!--
+         对象使用association
+        集合使用collection-->
+        <association property="teacher" column="tid" javaType="com.yzq.model.Teacher" select="getTeacher"/>
+    </resultMap>
+
+    <select id="getTeacher" parameterType="int" resultType="com.yzq.model.Teacher">
+        select *
+        from first.teacher
+        where id = #{id};</select>
+    <resultMap id="Studentss" type="com.yzq.model.Student">
+        <result property="id" column="sid"/>
+        <result property="name" column="sname"/>
+        <association property="teacher" javaType="com.yzq.model.Teacher">
+            <result property="name" column="tname"/>
+        </association>
+    </resultMap>
+    <select id="getStudentss" resultType="com.yzq.model.Student">
+        select s.id sid, s.name sname, t.name tname
+        from first.student as s,
+             first.teacher as t
+        where t.id = s.tid
+    </select>
+</mapper>
