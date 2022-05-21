@@ -10,10 +10,10 @@ interface GreetingService {
     void sayMessage(String message);
 }
 
-public class Lamv {
+ class LamvTest {
     @Test
     void testLambda() {
-        Lamv tester = new Lamv();
+        LamvTest tester = new LamvTest();
 
         // 类型声明
         MathOperation addition = Integer::sum;

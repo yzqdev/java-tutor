@@ -12,7 +12,7 @@ import java.util.Vector;
  * @date time 2021/10/15 11:08
  * @modified By:
  */
-public class EnumTest {
+ class EnumTest {
     @Test
     void enumTest() {
         Enumeration<String> days;

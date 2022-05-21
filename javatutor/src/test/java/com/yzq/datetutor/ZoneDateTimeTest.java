@@ -11,16 +11,16 @@ import java.time.ZonedDateTime;
  * @date time 2022/1/21 23:02
  * @modified By:
  */
-public class ZoneDateTimeTest {
+ class ZoneDateTimeTest {
     @Test
-    public void test1(){
+     void test1(){
         ZonedDateTime zbj = ZonedDateTime.now(); // 默认时区
         ZonedDateTime zny = ZonedDateTime.now(ZoneId.of("America/New_York")); // 用指定时区获取当前时间
         System.out.println(zbj);
         System.out.println(zny);
     }
     @Test
-    public void toLocalTime(){
+     void toLocalTime(){
         LocalDateTime ldt = LocalDateTime.of(2019, 9, 15, 15, 16, 17);
         ZonedDateTime zbj = ldt.atZone(ZoneId.systemDefault());
         ZonedDateTime zny = ldt.atZone(ZoneId.of("America/New_York"));

@@ -9,7 +9,7 @@ import java.util.Locale;
  * @date time 2021/10/14 14:56
  * @modified By:
  */
-public class FormatTest {
+ class FormatTest {
     @Test
     void formatNumber() {
         String name = "盖伦";

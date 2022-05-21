@@ -14,9 +14,9 @@ import java.util.Locale;
  * @date time 2021/10/12 21:45
  * @modified By:
  */
-public class TimeApi {
+ class TimeApiTest {
     @Test
-    public void timeApi1() {
+     void timeApi1() {
         /*
          * 本地化日期时间 API
          * LocalDate/LocalTime 和 LocalDateTime 类可以在处理时区不是必须的情况。代码如下
@@ -54,7 +54,7 @@ public class TimeApi {
     }
 
     @Test
-    public void timeApi2() {
+     void timeApi2() {
         // 获取当前时间日期
         ZonedDateTime date1 = ZonedDateTime.parse("2015-12-03T10:15:30+05:30[Asia/Shanghai]");
         System.out.println("date1: " + date1);
@@ -67,7 +67,7 @@ public class TimeApi {
     }
 
     @Test
-    public void timeApi3() {//输出所有区域标识符
+     void timeApi3() {//输出所有区域标识符
         System.out.println(ZoneId.getAvailableZoneIds());
 
         ZoneId zone1 = ZoneId.of("Europe/Berlin");

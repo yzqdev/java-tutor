@@ -11,10 +11,10 @@ import java.util.*;
  * @Date:Created time 2019/6/29 13:06
  * @Modified By:
  */
-public class OtherCollectionTest {
+ class OtherCollectionTest {
 
     @Test
-    public void test1() {
+     void test1() {
         Properties capitals = new Properties();
         Set<Object> states;
         String str;
@@ -40,7 +40,7 @@ public class OtherCollectionTest {
     }
 
     @Test
-    public void test2() {
+     void test2() {
 
         List<String> myList = Arrays.asList("a1", "a2", "b1", "c2", "c1");
 
@@ -53,7 +53,7 @@ public class OtherCollectionTest {
     }
 
     @Test
-    public void charts() {
+     void charts() {
         String str = "这是一个字符串";
         str.chars().mapToObj(String::valueOf).forEach(System.out::println);
         str.chars().forEach(System.out::println);
@@ -62,7 +62,7 @@ public class OtherCollectionTest {
     }
 
     @Test
-    public void single() {
+     void single() {
         List<String> list = new ArrayList<>(List.of("aaa", "bbb", "c", "d", "e", "f", "t", "z"));
         Collections.reverse(list);
 

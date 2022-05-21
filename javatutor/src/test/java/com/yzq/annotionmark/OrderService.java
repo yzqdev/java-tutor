@@ -22,6 +22,7 @@ public class OrderService {
      *
      * <p><pre>{@code
      *  演示如何使用该方法
+     *
      *  List<Goods> items = new ArrayList<>();
      *  Goods goods = new Goods(1L, BigDecimal.ONE);
      *  Goods goods2 = new Goods(2L, BigDecimal.TEN);

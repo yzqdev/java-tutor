@@ -12,9 +12,9 @@ import java.util.Queue;
  * @date time 2021/10/14 12:01
  * @modified By:
  */
-public class LinkListTest {
+ class LinkListTest {
     @Test
-    public void deque() {
+     void deque() {
         LinkedList<Hero> ll = new LinkedList<>();
         ll.addLast(new Hero("hero1"));
         ll.addLast(new Hero("hero2"));
@@ -42,7 +42,7 @@ public class LinkListTest {
     }
 
     @Test
-    public void queue1() {
+     void queue1() {
 
 
         //所不同的是LinkedList还实现了Deque，进而又实现了Queue这个接口

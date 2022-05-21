@@ -14,8 +14,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * @date time 2021/10/16 11:36
  * @modified By:
  */
-public class OptionalTest {
-    public Integer sum(Optional<Integer> a, Optional<Integer> b){
+ class OptionalTest {
+     Integer sum(Optional<Integer> a, Optional<Integer> b){
 
         // Optional.isPresent - 判断值是否存在
 
@@ -32,7 +32,7 @@ public class OptionalTest {
         return value1 + value2;
     }
     @Test
-    public void optional1(){
+     void optional1(){
         OptionalTest optionalTest=new  OptionalTest();
         Integer value1 = null;
         Integer value2 = 10;
@@ -45,20 +45,20 @@ public class OptionalTest {
         System.out.println(optionalTest.sum(a,b));
     }
     @Test
-    public void test_createsEmptyOptionalObject() throws Exception {
+     void test_createsEmptyOptionalObject() throws Exception {
         Optional<Object> empty = Optional.empty();
         assertFalse(empty.isPresent());
     }
 
     @Test
-    public void test_createOptionalObjectWithStaticMethod() {
+     void test_createOptionalObjectWithStaticMethod() {
         String val = "not null";
         Optional<String> hasVal = Optional.of(val);
         assertTrue(hasVal.isPresent());
     }
 
     @Test
-    public void test_processOptionalValue() {
+     void test_processOptionalValue() {
         String val = "not null";
         Optional<String> hasVal = Optional.of(val);
         System.out.println(hasVal);
@@ -66,14 +66,14 @@ public class OptionalTest {
     }
 
     @Test
-    public void test_passNullParamNoException() {
+     void test_passNullParamNoException() {
         String val = null;
         Optional<String> hasVal = Optional.ofNullable(val);
         assertFalse(hasVal.isPresent());
     }
 
     @Test
-    public void test_checkValuePresentOrNotJava11() throws Exception {
+     void test_checkValuePresentOrNotJava11() throws Exception {
         Optional<String> opt = Optional.of("has value");
         assertFalse(opt.isEmpty());
 
@@ -82,13 +82,13 @@ public class OptionalTest {
     }
 
     @Test
-    public void doSomeThingWhenExist() throws Exception {
+     void doSomeThingWhenExist() throws Exception {
         Optional<String> opt = Optional.of("baeldung");
         opt.ifPresent(name -> System.out.println(name.length()));
     }
 
     @Test
-    public void test_getValueUseorElse() throws Exception {
+     void test_getValueUseorElse() throws Exception {
         Optional<String> hasVal = Optional.of("Hello");
         String val = hasVal.orElse("no value");
         System.out.println(val);
@@ -96,7 +96,7 @@ public class OptionalTest {
     }
 
     @Test
-    public void test_getValueUseorElseget() throws Exception {
+     void test_getValueUseorElseget() throws Exception {
         Optional<String> hasVal = Optional.of("Hello");
         String val = hasVal.orElseGet(() -> "no value");
         assertEquals("Hello", val);
@@ -119,14 +119,14 @@ public class OptionalTest {
     }
 
     @Test
-    public void test_differenceOrElseAndorElseGet() throws Exception {
+     void test_differenceOrElseAndorElseGet() throws Exception {
         Optional<String> hasVal = Optional.of("value");
         System.out.println("enter orElse method");
         String var0 = hasVal.orElse(getDefaultValue());
     }
 
     @Test
-    public void test_mapList2ListSize() {
+     void test_mapList2ListSize() {
         List<String> companyNames = Arrays.asList(
                 "Java", "C++", "", "C", "", "Python");
         Optional<List<String>> listOptional = Optional.of(companyNames);

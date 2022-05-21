@@ -13,7 +13,7 @@ import java.nio.file.Path;
  * @modified By:
  * @since jdk12
  */
-public class Java12Test {
+ class Java12Test {
     @Test
     void filesTest(){
         Path file1= null;

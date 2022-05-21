@@ -12,7 +12,7 @@ class InstanceEnhance {
      * 新版本的instanceof的使用，无须显示强转
      */
     @Test
-    public void testOld() {
+     void testOld() {
         Object strObj = "Hello Instanceof!";
         if (strObj instanceof String  ) {
             String str=(String) strObj;
@@ -20,7 +20,7 @@ class InstanceEnhance {
             System.out.println(str.contains("Hello"));
         }
     } @Test
-    public void testNew() {
+     void testNew() {
         Object strObj = "Hello Instanceof!";
         if (strObj instanceof String str) {
             // 无需显示的进行强转

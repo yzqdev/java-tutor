@@ -12,7 +12,7 @@ import java.util.Map;
  * @date time 2021/10/14 12:05
  * @modified By:
  */
-public class HashMapTest {
+ class HashMapTest {
     @Test
     void init(){
         HashMap<String ,String> dic=new HashMap<>();

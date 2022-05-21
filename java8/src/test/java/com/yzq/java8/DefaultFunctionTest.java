@@ -26,7 +26,8 @@ interface FourWheeler {
 }
 
 class Bike implements Vehicle, FourWheeler {
-    public void print(){
+   @Override
+   public void print(){
         Vehicle.super.print();
         FourWheeler.super.print();
         Vehicle.blowHorn();
@@ -36,9 +37,9 @@ class Bike implements Vehicle, FourWheeler {
 /**
  * @see    <a href="https://www.runoob.com/java/java8-default-methods.html">java默认方法</a>
  */
-public class DefaultFunctionTest {
+ class DefaultFunctionTest {
     @Test
-    public void runBike(){
+     void runBike(){
         Vehicle vehicle = new Bike();
         vehicle.print();
     }

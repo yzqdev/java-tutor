@@ -14,9 +14,9 @@ enum WeekEnum {
     MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
 }
 
-public class SwitchEnhance {
+ class SwitchEnhance {
 @Test
-    public void newSwitch(){
+     void newSwitch(){
     WeekEnum weekDay = WeekEnum.SUNDAY;
     switch (weekDay) {
         case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> System.out.println("工作日");

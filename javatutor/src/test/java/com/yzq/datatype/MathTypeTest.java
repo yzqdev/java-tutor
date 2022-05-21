@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
  * @date time 2021/10/14 14:57
  * @modified By:
  */
-public class MathTypeTest {
+ class MathTypeTest {
     @Test
     void digitMath() {
         float f1 = 5.4f;
@@ -34,7 +34,7 @@ public class MathTypeTest {
         System.out.println(Math.E);
     }
 
-    public static void getLne() {
+     static void getLne() {
         double e = 1.0;
         double t = 1.0;
         for (int i = 1; i <= 20; i++) {

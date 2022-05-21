@@ -13,13 +13,13 @@ import java.util.stream.Collectors;
  * @date time 2021/10/12 21:38
  * @modified By:
  */
-public class SteamTest {
+class SteamTest {
     //生成流
     //在 Java 8 中, 集合接口有两个方法来生成流：
     //stream() − 为集合创建串行流。
     //parallelStream() − 为集合创建并行流。
     @Test
-    public void steam1() {
+     void steam1() {
         List<String> list = Arrays.asList("a1", "b2", "c3");
         list.stream().filter(s -> s.startsWith("c")).map(String::toUpperCase).sorted().forEach(System.out::println);
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
@@ -30,9 +30,9 @@ public class SteamTest {
        Stream 提供了新的方法 'forEach' 来迭代流中的每个数据。以下代码片段使用 forEach 输出了10个随机数：
    */
     @Test
-    public void forEachStream() {
+     void forEachStream() {
         Random random = new Random();
-        random.ints().limit(10).forEach(System.out::println);
+        random.ints(30,1,30).limit(10).forEach(System.out::println);
     }
 
     /*
@@ -40,7 +40,7 @@ public class SteamTest {
         map 方法用于映射每个元素到对应的结果，以下代码片段使用 map 输出了元素对应的平方数：
     */
     @Test
-    public void mapStream() {
+     void mapStream() {
 
         List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
         // 获取对应的平方数
@@ -51,7 +51,7 @@ public class SteamTest {
        filter 方法用于通过设置的条件过滤出元素。以下代码片段使用 filter 方法过滤出空字符串：
    */
     @Test
-    public void filterStream() {
+     void filterStream() {
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
         // 获取空字符串的数量
         long count = strings.stream().filter(String::isEmpty).count();
@@ -61,7 +61,7 @@ public class SteamTest {
        limit 方法用于获取指定数量的流。 以下代码片段使用 limit 方法打印出 10 条数据：
    */
     @Test
-    public void sortStream() {
+     void sortStream() {
         Random random = new Random();
         random.ints().limit(10).forEach(System.out::println);
     }
@@ -70,7 +70,7 @@ public class SteamTest {
       sorted 方法用于对流进行排序。以下代码片段使用 sorted 方法对输出的 10 个随机数进行排序：
   */
     @Test
-    public void sortedStream() {
+     void sortedStream() {
         Random random = new Random();
         random.ints().limit(10).sorted().forEach(System.out::println);
     }
@@ -78,7 +78,7 @@ public class SteamTest {
     //parallelStream 是流并行处理程序的代替方法。以下实例我们使用 parallelStream 来输出空字符串的数量：我们可以很容易的在顺序运行和并行直接切换。
 
     @Test
-    public void parallelStream() {
+     void parallelStream() {
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
         // 获取空字符串的数量
         long count = strings.parallelStream().filter(string -> string.isEmpty()).count();
@@ -89,7 +89,7 @@ public class SteamTest {
     //Collectors 类实现了很多归约操作，例如将流转换成集合和聚合元素。Collectors 可用于返回列表或字符串：
 
     @Test
-    public void collectorSteam() {
+     void collectorSteam() {
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
         List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
 
@@ -102,7 +102,7 @@ public class SteamTest {
      另外，一些产生统计结果的收集器也非常有用。它们主要用于int、double、long等基本类型上，它们可以用来产生类似如下的统计结果。
  */
     @Test
-    public void sumSteam() {
+     void sumSteam() {
         List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
 
         IntSummaryStatistics stats = numbers.stream().mapToInt((x) -> x).summaryStatistics();
@@ -114,21 +114,21 @@ public class SteamTest {
     }
 
     @Test
-    public void newSteam() {
+     void newSteam() {
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl", "  ");
         List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
         System.out.println(filtered);
     }
 
     @Test
-    public void rand() {
+     void rand() {
         Random random = new Random();
         random.ints().limit(10).forEach(System.out::println);
         System.out.println(random);
     }
 
     @Test
-    public void newMap() {
+     void newMap() {
         List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
 // 获取对应的平方数
         List<Integer> squaresList = numbers.stream().map(i -> i * i).distinct().collect(Collectors.toList());
@@ -136,7 +136,7 @@ public class SteamTest {
     }
 
     @Test
-    public void parallel() {
+     void parallel() {
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
 // 获取空字符串的数量
         long count = strings.parallelStream().filter(string -> string.isEmpty()).count();
@@ -144,7 +144,7 @@ public class SteamTest {
     }
 
     @Test
-    public void collects() {
+     void collects() {
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
         List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
 
@@ -154,7 +154,7 @@ public class SteamTest {
     }
 
     @Test
-    public void getSum() {
+     void getSum() {
         List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
 
         IntSummaryStatistics stats = numbers.stream().mapToInt((x) -> x).summaryStatistics();

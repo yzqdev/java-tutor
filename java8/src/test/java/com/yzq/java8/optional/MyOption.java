@@ -10,7 +10,7 @@ import java.util.Optional;
  * @date time 2021/11/30 13:20
  * @modified By:
  */
-public class MyOption {
+ class MyOption {
     @Test
     void optionTest() {
         System.out.println(bolTest());

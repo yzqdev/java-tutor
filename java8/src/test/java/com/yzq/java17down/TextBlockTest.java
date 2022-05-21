@@ -1,5 +1,6 @@
 package com.yzq.java17down;
 
+import cn.hutool.core.lang.Console;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -8,14 +9,14 @@ import org.junit.jupiter.api.Test;
  * @modified By:
  * @since jdk15
  */
-public class TextBlock {
+ class TextBlockTest {
     @Test
-    public void showTextBlock(){
+     void showTextBlock(){
         String query = """
                SELECT "EMP_ID", "LAST_NAME" FROM "EMPLOYEE_TB"
                WHERE "CITY" = 'INDIANAPOLIS'
                ORDER BY "EMP_ID", "LAST_NAME";
                """;
-        System.out.println(query);
+        Console.log("QUERY={}",query);
     }
 }

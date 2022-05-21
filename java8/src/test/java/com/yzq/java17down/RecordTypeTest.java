@@ -4,36 +4,36 @@ import org.junit.jupiter.api.Test;
 
 /**
  * <pre>
- *     public class Range {
+ *      class Range {
  *
  *     private final int min;
  *     private final int max;
  *
- *     public Range(int min, int max) {
+ *      Range(int min, int max) {
  *         this.min = min;
  *         this.max = max;
  *     }
  *
- *     public int getMin() {
+ *      int getMin() {
  *         return min;
  *     }
  *
- *     public int getMax() {
+ *      int getMax() {
  *         return max;
  *     }
  *
- *     public boolean equals(Object o) {
+ *      boolean equals(Object o) {
  *         if (this == o) return true;
  *         if (o == null || getClass() != o.getClass()) return false;
  *         Range range = (Range) o;
  *         return min == range.min && max == range.max;
  *     }
  *
- *     public int hashCode() {
+ *      int hashCode() {
  *         return Objects.hash(min, max);
  *     }
  *
- *     public String toString() {
+ *      String toString() {
  *         return "Range{" +
  *           "min=" + min +
  *           ", max=" + max +
@@ -61,9 +61,9 @@ class Tags {
 record Range(int min, int max) {
 }
 
-public class RecordType {
+ class RecordTypeTest {
     @Test
-    public void getRecord(){
+     void getRecord(){
         Range range=new Range(1,10);
         System.out.println(range);
         Tags tags=new Tags(1,20);

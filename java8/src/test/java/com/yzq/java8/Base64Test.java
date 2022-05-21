@@ -12,9 +12,9 @@ import java.util.UUID;
  * @date time 2021/10/12 21:50
  * @modified By:
  */
-public class Base64Test {
+ class Base64Test {
     @Test
-    public void base64Test1() {
+     void base64Test1() {
         try {
             // 使用基本编码
             String base64encodedString = Base64.getEncoder().encodeToString("runoob?java8".getBytes(StandardCharsets.UTF_8));

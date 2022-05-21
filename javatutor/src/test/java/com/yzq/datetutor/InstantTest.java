@@ -9,9 +9,9 @@ import java.time.Instant;
  * @date time 2022/1/21 22:52
  * @modified By:
  */
-public class InstantTest {
+ class InstantTest {
     @Test
-    public void instant() {
+     void instant() {
         Instant now = Instant.now();
         System.out.println(System.currentTimeMillis());
         System.out.println(now.getEpochSecond()); // 秒

@@ -12,22 +12,22 @@ import java.util.Date;
  * @date time 2022/1/21 21:39
  * @modified By:
  */
-public class TimestampTest {
+ class TimestampTest {
     @Test
-    public void timestampToLocal() {
+     void timestampToLocal() {
 
         Timestamp time = Timestamp.from(Instant.now());
         LocalDateTime localDateTime = time.toLocalDateTime();
         System.out.println(localDateTime);
     }
     @Test
-    public void timestampToLocalDateTime(){
+     void timestampToLocalDateTime(){
         long timestamp = System.currentTimeMillis();
         LocalDate localDate = Instant.ofEpochMilli(timestamp).atZone(ZoneOffset.ofHours(8)).toLocalDate();
         LocalDateTime localDateTime = Instant.ofEpochMilli(timestamp).atZone(ZoneOffset.ofHours(8)).toLocalDateTime();
     }
     @Test
-    public void localDateTimeToTimestamp() {
+     void localDateTimeToTimestamp() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         Timestamp time = Timestamp.valueOf(LocalDateTime.now().format(dtf));
         System.out.println(time);
@@ -35,14 +35,14 @@ public class TimestampTest {
     }
 
     @Test
-    public void localDateToDate() {
+     void localDateToDate() {
         LocalDate nowLocalDate = LocalDate.now();
         Date date = Date.from(nowLocalDate.atStartOfDay(ZoneOffset.ofHours(8)).toInstant());
         System.out.println(date);
     }
 
     @Test
-    public void LocalTimeToDate() {
+     void LocalTimeToDate() {
         LocalTime localTime = LocalTime.now();
         LocalDate localDate = LocalDate.now();
         LocalDateTime localDateTime = LocalDateTime.of(localDate, localTime);
@@ -51,7 +51,7 @@ public class TimestampTest {
          Date date = Date.from(instant);
     }
     @Test
-    public void localDateToTimestamp(){
+     void localDateToTimestamp(){
         LocalDate localDate = LocalDate.now();
         long timestamp = localDate.atStartOfDay(ZoneOffset.ofHours(8)).toInstant().toEpochMilli();
     }

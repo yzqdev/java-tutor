@@ -16,10 +16,10 @@ import java.awt.*;
  * @date time 2022/1/16 21:52
  * @modified By:
  */
-public class CaptchaTest {
+ class CaptchaTest {
 
     @Test
-    public void lineCaptchaTest1() {
+     void lineCaptchaTest1() {
         // 定义图形验证码的长和宽
         LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(200, 100);
         lineCaptcha.write("d:/tmp/a.jpg");
@@ -29,8 +29,7 @@ public class CaptchaTest {
     }
 
     @Test
-
-    public void lineCaptchaTest3() {
+    void lineCaptchaTest3() {
         // 定义图形验证码的长和宽
         LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(200, 70, 4, 15);
         lineCaptcha.setBackground(Color.yellow);
@@ -39,7 +38,7 @@ public class CaptchaTest {
 
     @Test
 
-    public void lineCaptchaWithMathTest() {
+     void lineCaptchaWithMathTest() {
         // 定义图形验证码的长和宽
         LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(200, 80);
         lineCaptcha.setGenerator(new MathGenerator());
@@ -50,7 +49,7 @@ public class CaptchaTest {
     }
 
     @Test
-    public void lineCaptchaTest2() {
+     void lineCaptchaTest2() {
 
         // 定义图形验证码的长和宽
         LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(200, 100);
@@ -69,7 +68,7 @@ public class CaptchaTest {
     }
 
     @Test
-    public void circleCaptchaTest() {
+     void circleCaptchaTest() {
 
         // 定义图形验证码的长和宽
         CircleCaptcha captcha = CaptchaUtil.createCircleCaptcha(200, 100, 4, 20);
@@ -81,7 +80,7 @@ public class CaptchaTest {
     }
 
     @Test
-    public void shearCaptchaTest() {
+     void shearCaptchaTest() {
 
         // 定义图形验证码的长和宽
         ShearCaptcha captcha = CaptchaUtil.createShearCaptcha(203, 100, 4, 4);
@@ -93,7 +92,7 @@ public class CaptchaTest {
     }
 
     @Test
-    public void shearCaptchaTest2() {
+     void shearCaptchaTest2() {
 
         // 定义图形验证码的长和宽
         ShearCaptcha captcha = new ShearCaptcha(200, 100, 4, 4);
@@ -104,7 +103,7 @@ public class CaptchaTest {
     }
 
     @Test
-    public void ShearCaptchaWithMathTest() {
+     void ShearCaptchaWithMathTest() {
         // 定义图形验证码的长和宽
         ShearCaptcha captcha = CaptchaUtil.createShearCaptcha(200, 45, 4, 4);
         captcha.setGenerator(new MathGenerator());
@@ -116,21 +115,21 @@ public class CaptchaTest {
     }
 
     @Test
-    public void GifCaptchaTest() {
+     void GifCaptchaTest() {
         GifCaptcha captcha = CaptchaUtil.createGifCaptcha(200, 100, 4);
         captcha.write("d:/tmp/gif_captcha.gif");
         captcha.verify(captcha.getCode());
     }
 
     @Test
-    public void bgTest() {
+     void bgTest() {
         LineCaptcha captcha = CaptchaUtil.createLineCaptcha(200, 100, 4, 1);
         captcha.setBackground(Color.WHITE);
         captcha.write("d:/tmp/test.jpg");
     }
 
     @Test
-    public void NumberGen() {
+     void NumberGen() {
         // 自定义纯数字的验证码（随机4位数字，可重复）
         RandomGenerator randomGenerator = new RandomGenerator("0123456789", 4);
         LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(200, 100);
@@ -142,7 +141,7 @@ public class CaptchaTest {
     }
 
     @Test
-    public void captcharNum() {
+     void captcharNum() {
         ShearCaptcha captcha = CaptchaUtil.createShearCaptcha(200, 45, 4, 4);
 // 自定义验证码内容为四则运算方式
         captcha.setGenerator(new MathGenerator());

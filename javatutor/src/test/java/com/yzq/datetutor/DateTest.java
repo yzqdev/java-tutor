@@ -13,7 +13,7 @@ import java.util.TimeZone;
  * @date time 2021/10/14 11:48
  * @modified By:
  */
-public class DateTest {
+  class DateTest {
     @Deprecated
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -47,7 +47,7 @@ public class DateTest {
     }
 
     @Test
-    public void testDate2() {
+    void testDate2() {
         Calendar calendar = Calendar.getInstance();
         Date now = calendar.getTime();
         // 当前日期
@@ -71,7 +71,7 @@ public class DateTest {
 
     }
     @Test
-    public void timeZone(){
+     void timeZone(){
         TimeZone tzDefault = TimeZone.getDefault(); // 当前时区
         TimeZone tzGMT9 = TimeZone.getTimeZone("GMT+09:00"); // GMT+9:00时区
         TimeZone tzNY = TimeZone.getTimeZone("America/New_York"); // 纽约时区

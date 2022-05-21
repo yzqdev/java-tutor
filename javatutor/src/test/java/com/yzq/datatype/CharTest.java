@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
  * @date time 2021/10/14 14:54
  * @modified By:
  */
-public class CharTest {
+ class CharTest {
     @Test
     void showCharTest() {
         String sentence = "盖伦,在进行了连续8次击杀后,获得了 超神 的称号";

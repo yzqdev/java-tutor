@@ -25,8 +25,8 @@ class Student {
 
 }
 
-public class OptionalExample {
-    public List<Student> initData() {
+ class OptionalExample {
+     List<Student> initData() {
         Student s1 = new Student("张三", 19, 80);
         Student s2 = new Student("李四", 19, 50);
         Student s3 = new Student("王五", 23, null);
@@ -44,7 +44,7 @@ public class OptionalExample {
     }
 
     @Test
-    public void beforeJava8() {
+     void beforeJava8() {
         List<Student> studentList = initData();
 
         for (Student student : studentList) {
@@ -60,7 +60,7 @@ public class OptionalExample {
     }
 
     @Test
-    public void useJava8() {
+     void useJava8() {
         List<Student> studentList = initData();
         for (Student student : studentList) {
             Optional<Student> studentOptional = Optional.of(student);

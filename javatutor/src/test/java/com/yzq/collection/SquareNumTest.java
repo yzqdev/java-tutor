@@ -14,7 +14,7 @@ import static java.lang.Double.parseDouble;
  * @author Ayan Amhed
  * @version 1.2
  */
-public class SquareNumTest {
+ class SquareNumTest {
     /**
      * This method returns the square of num.
      * This is a multiline description. You can use
@@ -23,7 +23,7 @@ public class SquareNumTest {
      * @param num The value to be squared.
      * @return num squared.
      */
-    public double square(double num) {
+     double square(double num) {
         return num * num;
     }
 
@@ -34,7 +34,7 @@ public class SquareNumTest {
      * @throws IOException On input error.
      * @see IOException
      */
-    public double getNumber() throws IOException {
+     double getNumber() throws IOException {
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader inData = new BufferedReader(isr);
         String str;
@@ -50,7 +50,7 @@ public class SquareNumTest {
      * @see IOException
      */
     @Test
-    public void mainMethod() throws IOException {
+     void mainMethod() throws IOException {
         SquareNumTest ob = new SquareNumTest();
         double val;
         System.out.println("Enter value to be squared: ");

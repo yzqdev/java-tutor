@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
  * @date time 2022/1/17 1:02
  * @modified By:
  */
-public class IdGen {
+class IdGen {
     @Test
-    public  void genNanoId(){
+    void genNanoId(){
         System.out.println(IdUtil.nanoId());
         System.out.println(IdUtil.simpleUUID());
         System.out.println(IdUtil.fastUUID());
