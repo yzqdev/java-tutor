@@ -5,6 +5,7 @@ import com.yzq.entity.charactor.Customer;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 
 /**
  * @author yanni
@@ -98,12 +99,12 @@ public class FileSteam {
     @Test
     void objSteam() {
         try {
-            ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(FileUtil.setFileAsSteam("txt/object.bin")));
+            ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(Objects.requireNonNull(FileUtil.setFileAsSteam("txt/object.bin"))));
             Customer cus = new Customer("wang", "0001", "pddd", 3000);
             objectOut.writeObject(cus);
             objectOut.close();
 
-            ObjectInputStream objectIn = new ObjectInputStream(new BufferedInputStream(FileUtil.getFileAsBufferSteam("txt/object.bin")));
+            ObjectInputStream objectIn = new ObjectInputStream(new BufferedInputStream(Objects.requireNonNull(FileUtil.getFileAsBufferSteam("txt/object.bin"))));
             cus = (Customer) objectIn.readObject();
             System.out.println("Name:" + cus.getName());
             System.out.println("ID:" + cus.getID());

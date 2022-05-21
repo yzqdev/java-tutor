@@ -10,7 +10,7 @@ import java.io.File;
  * @author yanni
  * @date 2022/01/03
  */
-class PrintFile {
+class PrintFileTest {
     @Test
      void showFolderFiles(){
         File f = new File("C:\\Windows");
