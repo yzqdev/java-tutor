@@ -1,0 +1,11 @@
+{
+  "name": "docsifyzh-cn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yzqtpl/docsifyzh-cn.git",
+  "author": "yzqdev <yzqdev@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "docsify serve docs -p 4900"
+  }
+}
