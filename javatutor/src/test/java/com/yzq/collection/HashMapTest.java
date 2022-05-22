@@ -53,7 +53,7 @@ import java.util.Map;
         hashMap.put(null, "123");
         hashMap.put("123", null);
 
-        Hashtable<String,String> hashtable = new Hashtable<String,String>();
+        Hashtable<String,String> hashtable = new Hashtable<>();
         //Hashtable不能用null作key，不能用null作value
         hashtable.put(null, "123");
         hashtable.put("123", null);

@@ -1,6 +1,7 @@
 package com.yzq.collection.steamutil;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,12 +11,11 @@ import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
+@Builder
 class Person {
     private String name;
     private String phoneNumber;
 
-
-    // getters and setters
 }
 
 class CollectorTest {

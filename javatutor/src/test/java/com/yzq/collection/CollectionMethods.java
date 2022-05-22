@@ -15,7 +15,7 @@ class Foo {
 
     String name;
 
-    public Foo[] concat(Foo[] a, Foo[] b) {
+     Foo[] concat(Foo[] a, Foo[] b) {
         int aLen = a.length;
         int bLen = b.length;
         Foo[] c = new Foo[aLen + bLen];
@@ -25,10 +25,10 @@ class Foo {
     }
 }
 
-public class CollectionMethods {
+ class CollectionMethods {
 
     @Test
-    public void stringFunction() {
+     void stringFunction() {
         String s = "helloworld java is object";
         String a = "";
         String c = a.concat(s);
@@ -39,16 +39,14 @@ public class CollectionMethods {
     }
 
     @Test
-    public void arrForeach() {
+     void arrForeach() {
         List<Integer> numbers = Arrays.asList(-1, -2, 0, 4, 5);
 
-        numbers.forEach((k) -> {
-            System.out.println("这是数字:" + k);
-        });
+        numbers.forEach((k) -> System.out.println("这是数字:" + k));
     }
 
     @Test
-    public void vectorTest() {
+     void vectorTest() {
         Vector<Object> v = new Vector<>(3, 2);
         System.out.println("Initial size: " + v.size());
         System.out.println("Initial capacity: " + v.capacity());
@@ -88,7 +86,7 @@ public class CollectionMethods {
     }
 
     @Test
-    public void initArr() {
+     void initArr() {
 
         //初始化对象数组
         Foo foobar = new Foo();
@@ -117,7 +115,7 @@ public class CollectionMethods {
     }
 
     @Test
-    public void sortYou() {
+     void sortYou() {
         ArrayList<String> sites = new ArrayList<>();
         sites.add("Taobao");
         sites.add("Wiki");
@@ -135,7 +133,7 @@ public class CollectionMethods {
 
 
     @Test
-    public void showHashable() {
+     void showHashable() {
         Hashtable<String, Double> balance = new Hashtable<>();
         Enumeration<String> names;
         String str;

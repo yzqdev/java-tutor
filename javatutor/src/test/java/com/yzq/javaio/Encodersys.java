@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * <p><img src='https://www.runoob.com/wp-content/uploads/2013/12/iostream2xx.png' /></p>
@@ -52,7 +53,7 @@ public class Encodersys {
         }
         //FileReader是不能手动设置编码方式的，为了使用其他的编码方式，只能使用InputStreamReader来代替
         //并且使用new InputStreamReader(new FileInputStream(f),Charset.forName("UTF-8")); 这样的形式
-        try (InputStreamReader isr = new InputStreamReader(new FileInputStream(f), Charset.forName("UTF-8"))) {
+        try (InputStreamReader isr = new InputStreamReader(new FileInputStream(f), StandardCharsets.UTF_8)) {
             char[] cs = new char[(int) f.length()];
             isr.read(cs);
             System.out.printf("InputStreamReader 指定编码方式UTF-8,识别出来的字符是：%n");

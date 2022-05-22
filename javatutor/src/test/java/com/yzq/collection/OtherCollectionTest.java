@@ -53,7 +53,7 @@ import java.util.*;
     }
 
     @Test
-     void charts() {
+     void chartsTest() {
         String str = "这是一个字符串";
         str.chars().mapToObj(String::valueOf).forEach(System.out::println);
         str.chars().forEach(System.out::println);
@@ -62,7 +62,7 @@ import java.util.*;
     }
 
     @Test
-     void single() {
+     void singleTest() {
         List<String> list = new ArrayList<>(List.of("aaa", "bbb", "c", "d", "e", "f", "t", "z"));
         Collections.reverse(list);
 

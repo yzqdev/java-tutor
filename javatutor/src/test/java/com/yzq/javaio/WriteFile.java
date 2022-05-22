@@ -17,9 +17,9 @@ import java.util.stream.Stream;
  * @date time 2021/10/14 11:32
  * @modified By:
  */
-public class WriteFile {
+ class WriteFile {
     @Test
-    public void write(){
+     void write(){
 
         try {
             PrintWriter printWriter=new PrintWriter("txt//print-writer.txt", StandardCharsets.UTF_8);
@@ -38,7 +38,7 @@ public class WriteFile {
         }
     }
     @Test
-    public void fileName() throws IOException {
+     void fileName() throws IOException {
         try (Stream<Path> stream = Files.list(Paths.get("d://tmp"))) {
             String joined = stream
                     .map(String::valueOf)

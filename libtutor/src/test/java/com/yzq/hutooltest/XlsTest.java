@@ -17,10 +17,10 @@ import java.util.List;
  * @modified By:
  */
 
-public class XlsTest {
+ class XlsTest {
 
     @Test
-    public void writeXls() {
+     void writeXls() {
         List<String> row1 = CollUtil.newArrayList("aa", "bb", "cc", "dd");
         List<String> row2 = CollUtil.newArrayList("aa1", "bb1", "cc1", "dd1");
         List<String> row3 = CollUtil.newArrayList("aa2", "bb2", "cc2", "dd2");

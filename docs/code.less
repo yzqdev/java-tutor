@@ -14,64 +14,6 @@
   max-width: 95% !important;
 }
 
-:not(pre) > code[class*="lang-"],
-pre[data-lang] {
-  background: #111111;
-}
-
-.sidebar-nav {
- li{
-   a {
-     transition: all 0.3s;
-     &:hover {
-
-       text-decoration: none;
-       color: var(--theme-color);;
-
-     }
-   }
- }
-}
-
-code[class*="lang-"],
-pre[data-lang] {
-  color: #ccc;
-
-}
-.main-box{
-  pre,code{
-    font-size: var(--code-font-size);
-  }
-  .sidebar .search .input-wrap {
-    align-items: center;
-  }
-}
-/* 背景变黑 */
- 
-
-.main-box [v-pre] code {
-  border: 0px red solid;
-  border-radius: 0px; /* background-color: #282828; */
-  background-color: #191919;
-  color: #FFF;
-}
-
-.main-box [v-pre] code {
-  padding: 1.5em 1.3em;
-  margin-left: 40px !important;
-
-  &::selection {
-    background-color: #318efd;
-  }
-
-  span::selection {
-    background-color: #318efd;
-  }
-
-  .token.punctuation {
-    color: inherit;
-  }
-}
 
 /* .main-box h2{margin-top: 70px;} */
 /* 代码行号盒子样式 */
