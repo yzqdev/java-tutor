@@ -79,6 +79,8 @@ FileNioTest(){
     @Test
     void getAttr() throws IOException {
         Path path = Paths.get("src/test/temp/src.txt");
+        System.out.println(path.toAbsolutePath());
+        System.out.println();
         System.out.println(Files.getLastModifiedTime(path));
         System.out.println(Files.size(path));
         System.out.println(Files.isSymbolicLink(path));

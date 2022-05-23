@@ -1,6 +1,10 @@
 package com.yzq.hutooltest;
 
+import cn.hutool.core.lang.Console;
 import cn.hutool.core.util.IdUtil;
+import cn.hutool.log.LogFactory;
+import cn.hutool.log.StaticLog;
+import cn.hutool.log.dialect.console.ConsoleColorLogFactory;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -11,8 +15,12 @@ import org.junit.jupiter.api.Test;
 class IdGen {
     @Test
     void genNanoId(){
-        System.out.println(IdUtil.nanoId());
-        System.out.println(IdUtil.simpleUUID());
-        System.out.println(IdUtil.fastUUID());
+        LogFactory.setCurrentLogFactory(ConsoleColorLogFactory.class);
+        Console.log(IdUtil.randomUUID());
+        Console.log(IdUtil.fastSimpleUUID());
+        Console.log(IdUtil.nanoId());
+        Console.log(IdUtil.simpleUUID());
+        Console.log(IdUtil.fastUUID());
+        Console.log("snowflakeId:"+IdUtil.getSnowflakeNextId());
     }
 }
