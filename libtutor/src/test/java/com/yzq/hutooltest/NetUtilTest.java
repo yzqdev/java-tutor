@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * @date time 2022/5/24 7:37
  * @modified By:
  */
-public class NetUtilTest {
+ class NetUtilTest {
     @Test
     void getIp(){
         Console.log(NetUtil.getLocalhostStr());
